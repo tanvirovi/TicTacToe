@@ -6,17 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <android.support.v7.widget.GridLayout
-        android:id="@+id/gridLayout"
+    <GridLayout
+        android:id="@+id/gridLayoutImage"
         android:layout_width="300dp"
         android:layout_height="300dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginBottom="431dp"
         android:background="@drawable/board"
-        app:columnCount="3"
+        android:columnCount="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:rowCount="3">
+        android:rowCount="3">
 
         <ImageView
             android:id="@+id/imageView1"
@@ -116,5 +118,30 @@
             android:tag="8"
             app:layout_column="2"
             app:layout_row="2" />
-    </android.support.v7.widget.GridLayout>
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/winningText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/playAgainButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/playAgainButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:onClick="playAgain"
+        android:text="Play Again"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayoutImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/winningText" />
+
 </android.support.constraint.ConstraintLayout>
